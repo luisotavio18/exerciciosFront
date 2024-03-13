@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tarefas</title>
+<script>
+    function exibirSaudacao() {
+        var nome = document.getElementById('nome').value;
+        var sobrenome = document.getElementById('sobrenome').value;
+        
+        alert("Olá " + nome + " " + sobrenome);
+    }
+    
+    function formatarCPF() {
+        var cpf = document.getElementById('cpf').value;
+        var cpfFormatado = cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
+        document.getElementById('cpfFormatado').innerText = cpfFormatado;
+    }
+    
+    function removerPontuacao() {
+        var cpf = document.getElementById('cpfPoint').value;
+        var cpfSemPontuacao = cpf.replace(/[^\d]/g, "");
+        document.getElementById('cpfSemPontuacao').innerText = cpfSemPontuacao;
+    }
+    
+    function alterarCor(cor) {
+        document.body.style.backgroundColor = cor;
+    }
+</script>
+</head>
+<body>
+    <h2>Tarefas</h2>
+    <h3>Tarefa 7: Saudação com Nome e Sobrenome</h3>
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome">
+    <label for="sobrenome">Sobrenome:</label>
+    <input type="text" id="sobrenome">
+    <button onclick="exibirSaudacao()">Saudação</button>
+
+    <h3>Tarefa 8: Preenchimento do CPF com Pontuação</h3>
+    <label for="cpf">CPF:</label>
+    <input type="text" id="cpf" maxlength="11" oninput="formatarCPF()">
+    <p>CPF Formatado: <span id="cpfFormatado"></span></p>
+
+    <h3>Tarefa 9: CPF sem Pontuação</h3>
+    <label for="cpfPoint">CPF:</label>
+    <input type="text" id="cpfPoint" maxlength="14" oninput="removerPontuacao()">
+    <p>CPF sem Pontuação: <span id="cpfSemPontuacao"></span></p>
+
+    <h3>Tarefa 10: Alterar a Cor de Fundo Dinamicamente</h3>
+    <button onclick="alterarCor('green')">Verde</button>
+    <button onclick="alterarCor('red')">Vermelho</button>
+</body>
+</html>

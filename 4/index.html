@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exibir Nome</title>
+</head>
+<body>
+
+<input type="text" id="nomeCompleto" placeholder="Digite o nome completo">
+<button onclick="exibirNome()">Exibir Nome</button>
+
+<script>
+function exibirNome() {
+    var nome = document.getElementById("nomeCompleto").value;
+    var quantidadeLetras = nome.replace(/\s/g, '').length;
+    alert("O Nome Completo é: \"" + nome + "\".\nA quantidade de letras é: " + quantidadeLetras + ".");
+}
+</script>
+</body>
+</html>

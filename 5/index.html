@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exibir Nome</title>
+<style>
+    .lampada {
+        width: 300px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<img src="lampada_apagada.png" id="lampada" class="lampada" onclick="trocarLampada()">
+
+<script>
+var lampadaAcesa = false;
+
+function trocarLampada() {
+    var lampada = document.getElementById("lampada");
+    if (lampadaAcesa) {
+        lampada.src = "lampada_apagada.png";
+        lampadaAcesa = false;
+    } else {
+        lampada.src = "lampada_acesa.png";
+        lampadaAcesa = true;
+    }
+}
+</script>
+
+</body>
+</html>
